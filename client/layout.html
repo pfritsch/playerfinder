@@ -1,0 +1,12 @@
+<template name="layout">
+  <header class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="{{pathFor 'playersList'}}">Player Finder</a>
+    </div>
+  </header>
+  <div class="container">
+    <div id="main" class="row-fluid">
+      {{yield}}
+    </div>
+  </div>
+</template>
