@@ -1,0 +1,21 @@
+<template name="playerSubmit">
+  {{#if currentUser}}
+    <h2>My profile</h2>
+    <form>
+      <div class="control-group">
+        <div class="controls">
+          <label for="playerName">Your pseudo</label>
+          <input id="playerName" name="playerName" type="text" value="{{displayName}}" placeholder=""/>
+        </div>
+        <!-- <div class="controls">
+          <input name="email" type="text" value="" placeholder="Your email"/>
+        </div> -->
+        <div class="controls">
+          <input type="submit" value="Publish your profile" class="btn btn-primary"/>
+        </div>
+      </div>
+    </form>
+  {{else}}
+    Lorem
+  {{/if}}
+</template>
