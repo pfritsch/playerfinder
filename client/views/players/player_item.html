@@ -2,8 +2,9 @@
   <div class="player">
     <div class="player-content">
       <h3><a href="{{pathFor 'playerDetail'}}">{{name}}</a></h3>
+      {{#if ownPlayer}}<label for="playerName">Edit</label>{{/if}}
       {{> gamesList}}
-      <a href="{{email_link}}" class="btn">contact</a>
+      <a href="{{emailLink}}" class="btn">contact</a>
     </div>
   </div>
 </template>

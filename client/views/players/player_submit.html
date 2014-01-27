@@ -1,21 +1,30 @@
 <template name="playerSubmit">
   {{#if currentUser}}
-    <h2>My profile</h2>
-    <form>
+    <h2>{{currentUser.username}}'s profile</h2>
+    <form id="player-profile">
       <div class="control-group">
         <div class="controls">
-          <label for="playerName">Your pseudo</label>
-          <input id="playerName" name="playerName" type="text" value="{{displayName}}" placeholder=""/>
+          <label for="playerName">In-game pseudo:</label>
+          <input id="playerName" name="playerName" type="text" value="{{displayName}}" placeholder="pseudo"/>
         </div>
         <!-- <div class="controls">
-          <input name="email" type="text" value="" placeholder="Your email"/>
+          <input name="email" type="text" value="" placeholder="email"/>
         </div> -->
-        <div class="controls">
-          <input type="submit" value="Publish your profile" class="btn btn-primary"/>
-        </div>
+        {{#if profileIsOnline}}
+          <p>Your profile <strong>is online</strong>.</p>
+          <div class="controls">
+            <input type="submit" value="Update" class="btn btn-primary"/>
+            <a class="btn delete" href="#">Remove</a>
+          </div>
+        {{else}}
+          <p>Your profile <strong>is not online</strong>.</p>
+          <div class="controls">
+            <input type="submit" value="Publish" class="btn btn-primary"/>
+          </div>
+        {{/if}}
       </div>
     </form>
   {{else}}
-    Lorem
+    Please login or create an account to publish your profile.
   {{/if}}
 </template>

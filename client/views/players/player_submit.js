@@ -1,7 +1,6 @@
 Template.playerSubmit.helpers({
   displayName : function () {
     var user = Meteor.user();
-    console.log(user);
     if (!user)
       return '';
     if (user.profile && user.profile.name)
@@ -9,6 +8,9 @@ Template.playerSubmit.helpers({
     if (user.username)
       return user.username;
     return '';
+  },
+  profileIsOnline : function () {
+    return Players.findOne({userId: Meteor.user()._id});
   }
 });
 
@@ -16,12 +18,21 @@ Template.playerSubmit.events({
   'submit form': function(e) {
     e.preventDefault();
     var player = {
-      name: $(e.target).find('[name=name]').val()
+      name: $(e.target).find('[name=playerName]').val()
     }
-    Meteor.call('player', publishPlayer, function(error, id) {
+    Meteor.call('player', player, function(error, id) {
+      clearErrors();
       if (error)
-        return alert(error.reason);
-      // Router.go('postPage', {_id: id});
+        throwError(error.reason);
     });
+  },
+
+  'click .delete': function(e) {
+    e.preventDefault();
+    var currentPlayer = Players.findOne({userId: Meteor.user()._id});
+    if (confirm("Remove your profile from the list?")) {
+      Players.remove(currentPlayer._id);
+      Router.go('playersList');
+    }
   }
 });
