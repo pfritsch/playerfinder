@@ -1,5 +1,8 @@
 Template.playerItem.helpers({
-  email_link: function() {
+  emailLink: function() {
     return 'mailto:'+this.email;
-  }
+  },
+  ownPlayer: function() {
+    return this.userId == Meteor.userId();
+  },
 });

@@ -1,8 +1,10 @@
 <template name="playerItem">
   <div class="player">
     <div class="player-content">
-      <h3><a href="{{email_link}}">{{name}}</a></h3>
+      <h3><a href="{{pathFor 'playerDetail'}}">{{name}}</a></h3>
+      {{#if ownPlayer}}<label for="playerName">Edit</label>{{/if}}
       {{> gamesList}}
+      <a href="{{emailLink}}" class="btn">contact</a>
     </div>
   </div>
 </template>

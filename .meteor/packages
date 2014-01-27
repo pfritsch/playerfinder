@@ -4,8 +4,10 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-insecure
 preserve-inputs
-bootstrap
 iron-router
 spin
+accounts-password
+accounts-ui
+accounts-entry
+zurb-foundation

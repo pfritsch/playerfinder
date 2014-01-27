@@ -1,5 +1,5 @@
 Template.playersList.helpers({
   players: function() {
-    return Players.find();
+    return Players.find({}, {sort: {submitted: -1}});
   }
 });
