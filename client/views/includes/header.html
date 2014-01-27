@@ -1,17 +1,18 @@
 <template name="header">
-  <header class="navbar navbar-inverse">
-    <div class="navbar-inner">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="{{pathFor 'playersList'}}">Microscope</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav pull-right">
-          <li>{{loginButtons}}</li>
-        </ul>
-      </div>
-    </div>
+
+  <header class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="{{pathFor 'playersList'}}">Player Finder</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li>{{accountButtons}}</li>
+      </ul>
+    </section>
   </header>
 </template>

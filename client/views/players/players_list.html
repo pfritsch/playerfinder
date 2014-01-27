@@ -1,7 +1,12 @@
 <template name="playersList">
-  <div class="players">
-    {{#each players}}
-      {{> playerItem}}
-    {{/each}}
+  <aside class="sidebar medium-4 columns" role="complementary">
+    {{> sidebar}}
+  </aside>
+  <div class="main medium-8 columns" role="main">
+    <div class="players">
+      {{#each players}}
+        {{> playerItem}}
+      {{/each}}
+    </div>
   </div>
 </template>
