@@ -1,3 +1,29 @@
 <template name="sidebar">
-  {{> playerSubmit}}
+  
+  {{#if currentUser}}
+    <a class="th round" href="#">
+      <img src="http://placehold.it/100x100/bada55/000&text=Portrait">
+    </a>
+    <h2>{{currentUser.username}}</h2>
+
+    {{#if profileIsOnline}}
+      <p>Your profile <strong>is online</strong>.</p>
+      <a href="{{pathFor 'playerSubmit'}}" class="">Edit</a>
+    {{else}}
+      <p>Your profile <strong>is not online</strong>.</p>
+      <a href="{{pathFor 'playerSubmit'}}" class="button">create</a>
+    {{/if}}
+
+  {{else}}
+
+     <h2>Want to play with us?</h2>
+     <br>
+     <a href="/sign-in">login</a> or <a href="/sign-up">register</a>
+    
+  {{/if}}
+
+  <br>
+  <hr>
+  {{loginButtons}}
+
 </template>

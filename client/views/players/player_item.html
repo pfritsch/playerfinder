@@ -1,9 +1,13 @@
 <template name="playerItem">
-  <div class="player">
+  <div class="player panel radius">
     <div class="player-content">
       <h3><a href="{{pathFor 'playerDetail'}}">{{name}}</a></h3>
-      {{#if ownPlayer}}<label for="playerName">Edit</label>{{/if}}
-      {{> gamesList}}
+      {{#if ownPlayer}}<a href="{{pathFor 'playerSubmit'}}">edit</a>{{/if}}
+      <p>
+        {{#each games}}
+          {{> gameLabel}}
+        {{/each}}
+      </p>
       <a href="{{emailLink}}" class="btn">contact</a>
     </div>
   </div>

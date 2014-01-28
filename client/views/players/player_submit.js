@@ -24,6 +24,7 @@ Template.playerSubmit.events({
       clearErrors();
       if (error)
         throwError(error.reason);
+      Router.go('players', {_id: id});
     });
   },
 
@@ -32,7 +33,7 @@ Template.playerSubmit.events({
     var currentPlayer = Players.findOne({userId: Meteor.user()._id});
     if (confirm("Remove your profile from the list?")) {
       Players.remove(currentPlayer._id);
-      Router.go('playersList');
+      // Router.go('playersList');
     }
   }
 });

@@ -1,0 +1,14 @@
+<template name="players">
+  <div class="row fullWidth">
+    <aside class="sidebar medium-3 large-2 columns" role="complementary">
+      {{> sidebar}}
+    </aside>
+    <div class="main medium-9 large-10 columns" role="main">
+      <div class="players">
+        {{#each players}}
+          {{> playerItem}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

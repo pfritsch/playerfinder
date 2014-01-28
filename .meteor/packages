@@ -9,5 +9,4 @@ iron-router
 spin
 accounts-password
 accounts-ui
-accounts-entry
 zurb-foundation

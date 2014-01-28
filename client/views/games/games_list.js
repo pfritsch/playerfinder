@@ -1,5 +1,5 @@
-Template.gamesList.helpers({
+Template.games.helpers({
   games: function() {
-    return Games.find({playerId: this._id});
+    return Games.find({}, {sort: {submitted: -1}});
   }
 });
