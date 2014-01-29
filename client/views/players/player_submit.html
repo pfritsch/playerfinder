@@ -25,7 +25,9 @@
           <div class="medium-6 columns">
             {{#if profileIsOnline}}
               Your games: 
-              
+              {{#each games}}
+                {{> gameItem}}
+              {{/each}}
             {{/if}}
           </div>
         </div>

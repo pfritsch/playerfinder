@@ -11,6 +11,9 @@ Template.playerSubmit.helpers({
   },
   profileIsOnline : function () {
     return Players.findOne({userId: Meteor.user()._id});
+  },
+  games: function() {
+    return Games.find();
   }
 });
 

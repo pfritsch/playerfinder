@@ -6,7 +6,7 @@ Template.playerItem.helpers({
     return this.userId == Meteor.userId();
   },
   games: function() {
-    return Games.find({playerId: this._id});
+    return Games.find({gamers: this.userId});
   },
   gamesCount: function() {
     return Games.find({playerId: this._id}).count();

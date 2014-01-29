@@ -23,6 +23,10 @@ body {
   background-color: white;
 }
 
+.game.is-selected {
+  color: green;
+}
+
 .fullWidth {
   width: 100%;
   margin-left: auto;

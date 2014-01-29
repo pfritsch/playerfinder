@@ -25,18 +25,6 @@ if (Players.find().count() === 0) {
     submitted: now - 7 * 3600 * 1000
   });
 
-  Games.insert({
-    playerId: captainId,
-    title: 'Dark Souls',
-    platform: 'PS3'
-  });
-
-  Games.insert({
-    playerId: captainId,
-    title: 'Borderlands 2',
-    platform: 'PS3'
-  });
-
   Players.insert({
     name: 'Peter Parker',
     email: 'peter@bugle.ny',
@@ -44,11 +32,24 @@ if (Players.find().count() === 0) {
     submitted: now - 5 * 3600 * 1000
   });
 
-
   Players.insert({
     name: 'Bruce Banner',
     email: 'dr.banner@hulk.com',
     userId: pierre._id,
     submitted: now - 10 * 3600 * 1000
+  });
+
+  Games.insert({
+    title: 'Dark Souls',
+    platform: 'PS3',
+    gamers: [],
+    gamersNb: 0
+  });
+
+  Games.insert({
+    title: 'Borderlands 2',
+    platform: 'PS3',
+    gamers: [],
+    gamersNb: 0
   });
 }
