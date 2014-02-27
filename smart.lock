@@ -4,7 +4,7 @@
     "basePackages": {
       "iron-router": {},
       "spin": {},
-      "accounts-entry": {},
+      "filter-collections": {},
       "zurb-foundation": {}
     },
     "packages": {
@@ -18,10 +18,10 @@
         "tag": "v0.2.2",
         "commit": "3f655f0016228e4195acc784c45d3e3a247dc39f"
       },
-      "accounts-entry": {
-        "git": "https://github.com/BeDifferential/accounts-entry.git",
-        "tag": "v0.4.4",
-        "commit": "56cee1ff5afe2ce5be7b749cd74fc939fc9ce781"
+      "filter-collections": {
+        "git": "https://github.com/julianmontagna/filter-collections.git",
+        "tag": "v0.1.4",
+        "commit": "87bc9cee7a23459e427d4613383be3f67f29245c"
       },
       "zurb-foundation": {
         "git": "https://github.com/MixinLabs/meteor-foundation.git",

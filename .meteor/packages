@@ -9,4 +9,6 @@ iron-router
 spin
 accounts-password
 accounts-ui
+filter-collections
 zurb-foundation
+insecure

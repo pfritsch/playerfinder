@@ -2,7 +2,7 @@
   "packages": {
     "iron-router": {},
     "spin": {},
-    "accounts-entry": {},
+    "filter-collections": {},
     "zurb-foundation": {}
   }
 }

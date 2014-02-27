@@ -1,7 +1,7 @@
 <template name="playerItem">
   <div class="player panel radius">
     <div class="player-content">
-      <h3><a href="{{pathFor 'playerDetail'}}">{{name}}</a></h3>
+      <h3><a href="{{pathFor 'playerDetail'}}">{{pseudo}}</a></h3>
       {{#if ownPlayer}}<a href="{{pathFor 'playerSubmit'}}">edit</a>{{/if}}
       <p>
         {{#each games}}

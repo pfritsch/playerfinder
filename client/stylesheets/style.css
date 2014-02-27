@@ -23,6 +23,18 @@ body {
   background-color: white;
 }
 
+.games {
+  list-style: none;
+}
+.game {
+  display: block;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.game-title {
+  float: left;
+  white-space: nowrap;
+}
 .game.is-selected {
   color: green;
 }
@@ -54,4 +66,16 @@ body {
 .label {
   font-size: 0.6rem;
   letter-spacing: 0.1em;
+  margin-left: 1em; 
+}
+
+ul.pagination li.active a {
+  background: #008cba;
+  color: white;
+  font-weight: bold;
+  cursor: default;
+}
+
+.fc-filter.active {
+  font-weight: bold;
 }

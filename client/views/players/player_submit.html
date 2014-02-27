@@ -23,8 +23,10 @@
           </div>
 
           <div class="medium-6 columns">
+            <label for="search-games">Games</label>
+            <input id="search-games" type="text" placeholder="Add a game">
+
             {{#if profileIsOnline}}
-              Your games: 
               {{#each games}}
                 {{> gameItem}}
               {{/each}}

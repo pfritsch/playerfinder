@@ -1,7 +1,82 @@
 <template name="gamesList">
-  <ul>
-    {{#each games}}
-      {{> gameLabel}}
-    {{/each}}
-  </ul>
+  <div class="row fullWidth">
+    <aside class="sidebar medium-3 large-2 columns" role="complementary">
+      {{> sidebar}}
+    </aside>
+    <div class="main medium-9 large-10 columns" role="main">
+      <form role="search">
+        <div class="row">
+          <div class="small-6 columns">
+            <input type="text" class="form-control" placeholder="Search" value="{{fcFilterSearchable.criteria}}" data-fc-search-target="search-box">
+          </div>
+          <div class="small-4 columns">
+            <a href="#" data-dropdown="drop-platform" class="button small dropdown">Platform</a><br>
+            </ul id="drop-platform" data-dropdown-content class="f-dropdown"> 
+            {{#each platforms}}
+              <li><a href="#"
+                class="fc-filter {{#if fcFilterObj.isActive field value operator}}active{{/if}}"
+                data-fc-filter-field="{{field}}"
+                data-fc-filter-value="{{value}}"
+                data-fc-filter-operator="{{operator}}">
+                {{label}}
+                {{#if fcFilterObj.isActive field value operator}}active{{/if}}
+              </a></li>
+            {{/each}}
+          </div>
+          <div class="small-2 columns">
+            <button type="submit" class="button postfix fc-search-trigger" data-fc-search-trigger="search-box">Search</button>
+            {{#if fcFilterSearchable.criteria}}
+            <a class="fc-search-clear">X Reset</a>
+            {{/if}}
+          </div>
+
+          
+        </div>
+      </form>
+
+      <!-- active filters -->
+      <p>
+      {{#if fcFilterActive}}
+        {{#each fcFilterActive}}
+          {{title}}: <strong>{{value}}</strong> <a href="#" class="fc-filter-clear">reset</a>
+        {{/each}}
+      {{/if}} 
+   
+
+        
+
+      </p>
+      <!-- /active filters -->
+
+      <div class="games">
+        <ul>
+          {{#each fcResults}}
+          <li class="game">
+            <a href="" class="game-choose"><h3 class="game-title">{{title}}</h3></a> <span class="label">{{platform}}</span>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      {{#if fcPager.pages}}
+      <div class="pagination-centered">
+        <ul class="pagination">
+          <li class="fc-pager-previous arrow"><a href="">&laquo;</a></li>
+          {{#each fcPager.pages}}
+            <li class="{{status}}"><a href="#" class="fc-pager-page" data-fc-pager-page="{{page}}">{{page}}</a></li>
+          {{/each}}
+          <li class="fc-pager-next arrow"><a href="">&raquo;</a></li>
+        </ul>
+      </div>    
+      <!-- pager status -->
+      <p>
+        <strong>{{fcPager.offsetStart}}</strong> to <strong>{{fcPager.offsetEnd}}</strong> of <strong>{{fcPager.totalItems}}</strong> records.
+      </p>
+      <!-- /pager status -->
+        </div>
+      </div>
+      {{/if}}
+
+    </div>
+  </div>
 </template>
